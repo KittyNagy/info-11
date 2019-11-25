@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+int c, k;
+int mandelbrot(int k){if (k==0){return c;}
+else {return mandelbrot(k-1)*mandelbrot(k-1)+c;}}
+int main()
+{
+    cout<< "c=";
+    cin>>c;
+    cout<< "k=";
+    cin>>k;
+    cout << mandelbrot(k);
+    return 0;
+}
