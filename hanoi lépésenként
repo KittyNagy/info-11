@@ -1,0 +1,12 @@
+#include <iostream>
+
+using namespace std;
+void hanoi(int num, char from, char to, char holder){if(num==1){cout<<from<<"->"<<to<<num<<".korong"<<endl;
+return;}hanoi(num-1, from, holder, to);
+cout<<from<<"->"<<to<<num<<".korong"<<endl;
+hanoi(num-1, holder, to, from);}
+int main()
+{
+    hanoi(2, 'a','c','b');
+    return 0;
+}
