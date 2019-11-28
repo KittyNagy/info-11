@@ -1,0 +1,13 @@
+#include <iostream>
+
+using namespace std;
+ int szaml=1;
+int nem(int szam, int szamrendszer){
+if(szam==1){return 1;}
+return nem(szam/szamrendszer, szamrendszer)*10+szam%szamrendszer;}
+int main()
+{
+
+    cout<< nem(6, 2);
+    return 0;
+}
