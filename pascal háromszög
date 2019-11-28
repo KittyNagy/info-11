@@ -1,0 +1,12 @@
+#include <iostream>
+
+using namespace std;
+int pascal(int sor, int oszl){if ((sor==0)&&(oszl==0)){return 1;}
+if(sor==1){return 1;}
+if (oszl>sor-1){return 1;}
+return pascal(sor-1, oszl-1)+pascal(sor-1, oszl);}
+int main()
+{
+    cout<< pascal(2, 3);
+    return 0;
+}
