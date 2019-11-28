@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+using namespace std;
+   struct diak {
+   string nev;
+   string hajszin;
+   float matj;
+} XIB[32] ;
+
+int main()
+{
+    int n;
+    cout << "Hany szemely van?: ";
+    cin >> n;
+      for (int i=0; i<n; i++) {
+        cout << "A diak neve:";
+        cin >> XIB[i].nev;
+        cout << XIB[i].nev << " hajszine :";
+        cin >> XIB[i].hajszin;
+        cout << XIB[i].nev << " matjegye :";
+        cin >> XIB[i].matj;
+      }
+      int szoke=0, barna=0;
+      float Sszoke=0, Sbarna=0;
+      for (int i=0; i<n; i++) {
+        if(XIB[i].hajszin == "barna") {
+            barna++;
+            Sbarna+=XIB[i].matj;
+        }
+        if(XIB[i].hajszin == "szoke") {
+            szoke++;
+            Sszoke+=XIB[i].matj;
+        }
+      }
+      if(Sszoke/szoke < Sbarna/barna) {
+        cout << "A barnak ugyesebbek";
+      }
+      else {
+       cout << "A szokek ugyesebbek";
+      }
+    return 0;
+}
