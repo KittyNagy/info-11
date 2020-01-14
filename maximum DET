@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+int maxi(int bal, int jobb,int v[]){if(bal==jobb)return v[bal];
+int m=(bal+jobb)/2;
+int max1=maxi(bal, m, v);
+int max2=maxi(m+1, jobb, v);
+if (max1>max2){return max1;}
+return max2;}
+int main()
+{
+    int v[10]={9,2,3,4,5,6,7,8};
+    cout<< maxi(0, 7, v);
+    return 0;
+}
