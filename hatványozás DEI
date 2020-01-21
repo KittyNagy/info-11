@@ -1,0 +1,14 @@
+#include <iostream>
+
+using namespace std;
+int hatv(int a, int k){
+if(k==1){return a;}
+int x=hatv(a, k/2);
+x=x*x;
+if (k%2==1){x=x*a;}
+return x;}
+int main()
+{
+    cout<< hatv(5, 10);
+    return 0;
+}
