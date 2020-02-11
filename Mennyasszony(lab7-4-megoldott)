@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+
+int N = 2;
+string virag[] = {"rozsa", "tulipan", "gerbera","orchidea", "liliom"};
+/**
+args:
+csokor - az ideiglenes csokor, amelyikbe mar lehetnek viragok
+n - az ideiglenes csokor nagysaga
+ujvirag - az uj viragnak a neve, amit bele szeretnenk tenni a csokorba
+*/
+bool lehet(string csokor[], int n, string ujvirag)
+{
+    for(int i = 0; i<n; i++){if (csokor[i] == ujvirag){
+            return false;}}
+    return true;}
+void kiir(string csokor[], int n)
+{
+    for(int i = 0; i<n; i++)
+    {
+        cout << csokor[i] << " " ;
+    }
+    cout << endl;
+    return;
+}
+/**
+a backtrack fuggveny, amely megprobalja osszerakni a mennyasszonyi csokrot
+
+args:
+
+csokor - az ideiglenes csokor, amelyikkel probalkozunk
+n - az ideiglenes csokor hossza
+index - az a szam, ahanyadik viragnal tartunk a virag tombbol (pl index = 1, akkor csak a tulipant, s az azutani viragokat probaljuk a csokorba tenni)
+*/
+void backtrack(string csokor[], int n, int index){
+    if (n == N){
+        kiir(csokor, n);
+        return;}
+    for(int i = index; i<5; i++){
+        if (lehet(csokor, n, virag[i])){
+            string tempcsokor[N];
+            for(int j = 0; j<n; j++){tempcsokor[j] = csokor[j];}
+            tempcsokor[n] = virag[i];
+            backtrack(tempcsokor, n+1, i);}}}
+
+int main()
+{
+    string csokor[] = {""};
+    backtrack(csokor, 0, 0);
+    return 0;
+}
