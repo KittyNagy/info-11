@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+struct lista {
+   int  ertek;
+   lista * kov;
+};
+int main() {
+   lista * mutato = NULL;
+   int min=INT_MAX;
+   int i,n;
+   cout << "n = " ;
+   cin >> n ;
+   for(i=0;i<n;i++) {
+      lista * ujelem = new lista;
+      cout << "Kerem a kovetkezo elemet: " ;
+      cin >> ujelem->ertek;
+     if (ujelem ->ertek < min) {
+      min=ujelem->ertek;
+     }
+     ujelem->kov=mutato;
+     mutato=ujelem;
+     }
+   cout << "a minimum " << min;
+   return 0;
+}
