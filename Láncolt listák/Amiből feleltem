@@ -1,0 +1,38 @@
+include<iostream>
+using namespace std;
+struct lista {
+int pos1;
+int pos2;
+int pos3;
+lista * kov;
+};
+
+int main() {
+   lista * mutato = NULL;
+   int min=INT_MAX;
+   int minpos1, minpos2, minpos3;
+
+   do {
+      lista * ujelem = new lista;
+      cout<< "Kerem a pos1-et: ";
+      cin >> ujelem->pos1;
+      cout<< "Kerem a pos2-t: ";
+      cin >> ujelem->pos2;
+      cout<< "Kerem a pos3-et: ";
+      cin >> ujelem->pos3;
+
+      if((ujelem->pos1 + ujelem->pos2 + ujelem->pos3 < min) && (ujelem->pos1 + ujelem->pos2 + ujelem->pos3>0)){
+        min= ujelem->pos1 + ujelem->pos2 + ujelem->pos3;
+        minpos1 = ujelem->pos1;
+        minpos2 = ujelem->pos2;
+        minpos3 = ujelem->pos3;
+      }
+      ujelem->kov = mutato;
+      mutato = ujelem;
+      }while((mutato->pos1 + mutato->pos2 + mutato->pos3) >0);
+      cout<< "a mainimalis trio" << minpos1 << " " << minpos2 << " " << minpos3;
+
+   return 0;
+
+
+}
