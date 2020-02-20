@@ -30,7 +30,7 @@ int main() {
       ujelem->kov = mutato;
       mutato = ujelem;
       }while((mutato->pos1 + mutato->pos2 + mutato->pos3) >0);
-      cout<< "a mainimalis trio" << minpos1 << " " << minpos2 << " " << minpos3;
+      cout<< "a minimalis trio" << minpos1 << " " << minpos2 << " " << minpos3;
 
    return 0;
 
