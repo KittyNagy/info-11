@@ -1,0 +1,43 @@
+#include <iostream>
+
+using namespace std;
+
+bool van(int v[][100], int x, int y){if(v[x][y]==1){return true;}
+return false;}
+
+int hany(int v[][100], int x, int N){int db=0;
+for(int i=1; i<N+1; i++){db+=v[x][i];}return db;}
+
+int main()
+{
+    int N;
+    cin>>N;
+    int v[100][100];
+    for(int i=1; i<N+1; i++)
+    {
+        for(int j=1; j<N+1; j++)
+        {
+            v[i][j]=0;
+        }
+    }
+    v[1][2] = 1;
+    v[1][6] = 1;
+    v[2][3] = 1;
+    v[2][4] = 1;
+    v[3][4]= 1;
+    v[4][8]= 1;
+    v[5][6]= 1;
+    v[5][7]= 1;
+    v[5][8]= 1;
+    for(int i=1; i<N+1; i++)
+    {
+        for(int j=i+1; j<N+1; j++)
+        {
+            v[j][i]= v[i][j];
+        }
+    }
+    if (van(v,1,2)){cout<<"Van kapcsolat az 1-2 kozott";}
+    else cout<<"Nincs kapcsolat koztuk";
+    cout<<hany(v,1,N);
+    return 0;
+}
