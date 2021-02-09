@@ -16,3 +16,38 @@ int main()
         else {cout<< "a graf nem Euleri";}
     return 0;
 }
+
+
+
+
+TANÁR MEGOLDÁSA:
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    ifstream input("input.txt");
+    input >> n;
+    int i, j, v[n][n], paratlan_fokszam = 0;
+    for(i=0; i<n; i++){
+        int fok = 0;
+        for(j=0; j<n; j++){
+            input >> v[i][j];
+            fok += v[i][j];
+        }
+ if (fok%2==1) {
+            paratlan_fokszam++;
+        }
+    }
+
+    if (paratlan_fokszam <3 ) {
+        cout << "Euleri";
+    } else {
+        cout << "Nem euleri";
+    }
+    
+    return 0;
+}
