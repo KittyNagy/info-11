@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int N, keresett;
+    cin >> N;
+    cin >> keresett;
+    int J[N], B[N];
+    for (int n=0; n<N; n++){
+        cin>> B[n]>>J[n];
+        if (J[n]==keresett||B[n]==keresett){cout<< n+1;}
+    }
+    if(B[0]==keresett){cout<< "o az osszulo";}
+    if (J[N-1]<keresett){cout<< "max N ig adjuk meg a csomópontot";}
+    return 0;
+}
