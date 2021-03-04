@@ -1,0 +1,22 @@
+#include <iostream>
+#include<fstream>
+
+using namespace std;
+
+int main()
+{
+    int elso, masodik, uj;
+    ifstream in ("bac.txt");
+    //cout<<"a kisebbik egyenlo";
+    in>> elso;
+    //cout<<"a nagyobbik egyenlo";
+    in>> masodik;
+    cout<<masodik<<" "<<elso<<" ";
+    while(masodik!=1){
+        uj=3*elso-masodik;
+        masodik=elso;
+        elso=uj;
+        cout<<uj<< " ";
+    }
+    return 0;
+}
